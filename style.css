@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(45deg, rgb(243, 67, 220), rgb(203, 56, 240), rgb(173, 45, 247),rgb(93, 7, 253));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.wave{
+    position: absolute;
+    height: 800px;
+    width: 800px;
+    background: transparent;
+    transform-origin: center;
+    transition: 0.5s;
+    pointer-events: none;
+    border-radius: 50%;
+    border: 20px solid rgba(0, 0, 0, 0.001);
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.15),
+                inset 1px 1px 20px rgba(0, 0, 0, 0.1),
+    inset -1px -10px rgba(255, 255, 255, 0.15)
+    ,  1px 1px 10px rgba(0, 0, 0, 0.15),
+       1px 1px 20px rgba(0,0,0, 0.1),
+        -1px -1px 10px rgba(255, 255,255, 0.15);
+
+    animation: 5s waveMove forwards ease-out;
+    transform: scale(1);
+}
+
+@keyframes waveMove {
+    from{
+        border: 20px solid rgba(0, 0, 0, 0.001);
+        opacity: 1;
+        transform: scale(0);
+    }
+    to{
+        border: 40px solid rgba(0, 0, 0, 0.001);
+        opacity: 0;
+        transform: scale(1);
+    }
+}
