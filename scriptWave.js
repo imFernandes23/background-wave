@@ -4,10 +4,14 @@ function createWave(){
 }
 
 function posiWave(event){
-    const background = document.getElementById('background')
-    const wave = document.createElement('span')
+    let background = document.getElementById('background')
+    let wave = document.createElement('span')
     wave.classList.add('wave')
     wave.style.left = (event.clientX - 400) + "px"
     wave.style.top = (event.clientY - 400) + "px"
     background.appendChild(wave)
+
+    setTimeout(function(){
+        wave.remove()
+    },5000)
 }
